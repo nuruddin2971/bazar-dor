@@ -23,7 +23,7 @@ export default function SignUpPage() {
   const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    const data: Record<string, string> = Object.fromEntries(formData.entries());
+    const data = Object.fromEntries(formData.entries());
     // console.log("data from the form", data);
 
     // if (data.password !== data.confirmPassword) {
@@ -49,7 +49,11 @@ export default function SignUpPage() {
     });
     // console.log(data);
   };
-
+  const handleGitHubSignIn = async () => {
+    const data = await signIn.social({
+      provider: "github",
+    });
+  };
   return (
     <div className="min-h-screen w-full flex flex-col justify-center items-center py-10 px-4 sm:px-6 lg:px-8 bg-default-50">
       <div className="text-center mb-6">
@@ -188,6 +192,7 @@ export default function SignUpPage() {
 
           <Button
             type="button"
+            onClick={handleGitHubSignIn}
             className="w-full h-11 flex items-center justify-center gap-2.5 rounded-xl border border-default-200 bg-white hover:bg-default-50 text-[#263028] font-medium text-sm transition-colors"
           >
             <svg className="w-4 h-4 shrink-0 fill-current" viewBox="0 0 24 24">
@@ -198,7 +203,7 @@ export default function SignUpPage() {
         </div>
 
         <div className="text-center mt-6 text-sm text-default-600">
-          অ্যাকাউন্ট আছে?{" "}
+          অ্যাকাউন্ট আছে?
           <Link
             href="/signin"
             className="text-[#05893E] font-medium hover:underline"

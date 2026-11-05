@@ -5,6 +5,14 @@ import "react-marquee-text/dist/styles.css";
 interface Marq {
   id: string;
   title: string;
+  image: string;
+  nameBn: string;
+  today: number;
+  unit: string;
+  change: {
+    dir: string;
+    pct: number;
+  };
 }
 
 const Marquee = async () => {

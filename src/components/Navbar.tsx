@@ -31,7 +31,7 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center gap-2 sm:gap-4">
-            <Button variant="light" className="font-medium text-default-700">
+            <Button className="bg-[#05893E] text-white font-medium shadow-md">
               সাইন ইন
             </Button>
             <Button className="bg-[#05893E] text-white font-medium shadow-md">
