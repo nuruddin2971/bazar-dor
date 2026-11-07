@@ -36,6 +36,11 @@ export default function SignInPage() {
     });
     // console.log(data);
   };
+  const handleGitHubSignIn = async () => {
+    const data = await signIn.social({
+      provider: "github",
+    });
+  };
 
   return (
     <div className="min-h-screen w-full flex flex-col justify-center items-center py-10 px-4 sm:px-6 lg:px-8 bg-default-50">
@@ -145,6 +150,7 @@ export default function SignInPage() {
 
           <Button
             type="button"
+            onClick={handleGitHubSignIn}
             className="w-full h-11 flex items-center justify-center gap-2.5 rounded-xl border border-default-200 bg-white hover:bg-default-50 text-[#263028] font-medium text-sm transition-colors"
           >
             <svg className="w-4 h-4 shrink-0 fill-current" viewBox="0 0 24 24">

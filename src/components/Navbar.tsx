@@ -1,12 +1,21 @@
+"use client";
 import { Button } from "@heroui/react";
 import Image from "next/image";
 import React from "react";
 import NavLinks from "./NavLinks";
+import { signOut, useSession } from "@/lib/auth-client";
 
 const Navbar = () => {
   const date = new Date().toLocaleDateString("bn-BD", {
     dateStyle: "full",
   });
+
+  // const { data, isPending } = useSession();
+
+  // const handleSignOut = async () => {
+  //   await signOut();
+  // };
+  // console.log(data);
 
   return (
     <nav className="">
@@ -31,12 +40,24 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center gap-2 sm:gap-4">
-            <Button className="bg-[#05893E] text-white font-medium shadow-md">
+            <Button
+              // onClick={handleSignIn}
+              className="bg-[#05893E] text-white font-medium shadow-md"
+            >
               সাইন ইন
             </Button>
-            <Button className="bg-[#05893E] text-white font-medium shadow-md">
+            <Button
+              // onClick={handleSignUp}
+              className="bg-[#05893E] text-white font-medium shadow-md"
+            >
               সাইন আপ
             </Button>
+            {/* <Button
+              // onClick={handleSignOut}
+              className="bg-[#05893E] text-white font-medium shadow-md"
+            >
+              সাইন আউট
+            </Button> */}
           </div>
         </div>
       </header>

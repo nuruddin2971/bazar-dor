@@ -2,7 +2,13 @@ import { Button } from "@heroui/react";
 import Image from "next/image";
 import React from "react";
 
-export default function Home() {
+export default async function Home() {
+  const res = await fetch(
+    "https://openapi.programming-hero.com/api/bazardor/products",
+  );
+  const data = await res.json();
+  console.log(data);
+
   const date = new Date().toLocaleDateString("bn-BD", {
     dateStyle: "full",
   });
